@@ -14,9 +14,6 @@ export default {
     props: {
         data: Array
     },
-    mounted() {
-        console.log("mounted Cards.", this.data)
-    }
 }
 </script>
 

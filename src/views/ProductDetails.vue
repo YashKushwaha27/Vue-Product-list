@@ -1,17 +1,17 @@
 <template>
     <div class="main">
         <div class="imgClass">
-            <img class="image-data" v-bind:src="data.image" :alt="data.title" />
+            <img class="image-data" v-bind:src="data?.image" :alt="data?.title" />
         </div>
         <div class="details">
             <div class="title">
-                <text class="titleInner">{{ data.title }}</text>
+                <text class="titleInner">{{ data?.title }}</text>
             </div>
             <div class="description">
-                <text class="descriptionData">{{ data.description }}</text>
+                <text class="descriptionData">{{ data?.description }}</text>
             </div>
             <div class="rating">
-                <text class="ratingData"> Rating: {{data.rating.rate}} / 5 </text>
+                <text class="ratingData"> Rating: {{data?.rating?.rate}} / 5 </text>
             </div>
         </div>
     </div>
