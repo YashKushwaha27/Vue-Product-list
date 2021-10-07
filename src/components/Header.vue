@@ -1,12 +1,14 @@
 <template>
     <div class="topnav">
-        <a class="active">Product List</a>
+        <a class="active">
+            <router-link to="/" style="background: transparent; font-size: 30px">Product List</router-link>
+        </a>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
 }
 </script>
 
@@ -14,6 +16,7 @@ export default {
 .topnav {
     background-color: #333;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 /* Style the links inside the navigation bar */
