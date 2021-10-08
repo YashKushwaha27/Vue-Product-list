@@ -13,7 +13,7 @@ export default {
     },
     data() {
         return {
-            card_data: []
+            card_data: [],
         }
     },
     async created() {

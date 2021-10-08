@@ -1,16 +1,16 @@
 <template>
     <div class="main">
         <div class="img-class">
-            <img class="image-self" v-bind:src="data.image" v-bind:alt="data.title" />
+            <img class="image-self" v-bind:src="data?.image" v-bind:alt="data?.title" />
         </div>
-        <router-link :to="{ name: 'ProductDetails', params: { id: data.id } }">
-            <h4 class="title">{{ data.title }}</h4>
+        <router-link :to="{ name: 'ProductDetails', params: { id: data?.id } }">
+            <h4 class="title">{{ data?.title }}</h4>
         </router-link>
         <div class="body">
-            <text>{{ data.description }}</text>
+            <text>{{ data?.description }}</text>
         </div>
         <div class="footer">
-            <text>Rating: {{ data.rating.rate }} / 5</text>
+            <text>Rating: {{ data?.rating?.rate }} / 5</text>
         </div>
     </div>
 </template>
@@ -28,7 +28,7 @@ export default {
 .main {
     border: 1px solid gray;
     border-radius: 10px;
-    width: 15%;
+    width: 200px;
     min-height: 250px;
     margin: 10px;
     display: flex;
