@@ -11,7 +11,7 @@
                 <text class="descriptionData">{{ data?.description }}</text>
             </div>
             <div class="rating">
-                <text class="ratingData"> Rating: {{data?.rating?.rate}} / 5 </text>
+                <text class="ratingData">Rating: {{ data?.rating?.rate }} / 5</text>
             </div>
         </div>
     </div>
@@ -19,13 +19,15 @@
 
 <script>
 import axios from 'axios';
+import router from '../router';
 
 export default {
     name: 'ProductDetails',
     data() {
         return {
             id: '',
-            data: {}
+            data: {},
+            loading: false
         }
     },
     async created() {
@@ -34,14 +36,13 @@ export default {
             this.data = await this.getData(this.$route.params.id)
         } else {
             alert("Enter a valid ID");
-
+            router.push({ path: '/' })
         }
     },
     methods: {
         async getData(id) {
             const res = await axios.get('https://fakestoreapi.com/products/' + id);
             const data_res = await res.data;
-            console.log("data ->", data_res)
             return data_res
         }
     }
@@ -76,12 +77,12 @@ export default {
     widows: 100%;
 }
 .title {
-  margin-top: 10px;
-  padding-left: 15px;
-  padding-right: 7px;
-  height: 100px;
-  padding-top: 10px;
-  color: rgb(0, 0, 118);
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 7px;
+    height: 100px;
+    padding-top: 10px;
+    color: rgb(0, 0, 118);
 }
 .titleInner {
     font-size: 35px;
@@ -104,14 +105,14 @@ export default {
     font-style: italic;
     font-size: 20px;
 }
-.rating{
+.rating {
     border-top: 1px solid gray;
     margin-top: 10px;
     padding-top: 10px;
     width: 80%;
     margin-left: 10%;
 }
-.ratingData{
+.ratingData {
     font-size: 40px;
     margin-left: 30%;
     font-style: italic;
